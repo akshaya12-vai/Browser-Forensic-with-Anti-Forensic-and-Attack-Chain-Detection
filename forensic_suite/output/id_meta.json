@@ -1,0 +1,58 @@
+[
+  {
+    "browser": "chrome",
+    "table": "visits",
+    "count": 9,
+    "min_id": 1,
+    "max_id": 14,
+    "seq": 14
+  },
+  {
+    "browser": "chrome",
+    "table": "urls",
+    "count": 9,
+    "min_id": 1,
+    "max_id": 13,
+    "seq": 13
+  },
+  {
+    "browser": "chrome",
+    "table": "downloads",
+    "count": 0,
+    "min_id": null,
+    "max_id": null,
+    "seq": null
+  },
+  {
+    "browser": "edge",
+    "table": "visits",
+    "count": 5,
+    "min_id": 1,
+    "max_id": 5,
+    "seq": 5
+  },
+  {
+    "browser": "edge",
+    "table": "urls",
+    "count": 4,
+    "min_id": 1,
+    "max_id": 4,
+    "seq": 4
+  },
+  {
+    "browser": "edge",
+    "table": "downloads",
+    "count": 1,
+    "min_id": 1,
+    "max_id": 1,
+    "seq": null
+  },
+  {
+    "browser": "firefox",
+    "table": "moz_historyvisits",
+    "count": 4,
+    "min_id": 1,
+    "max_id": 4,
+    "seq": 4
+  }
+]

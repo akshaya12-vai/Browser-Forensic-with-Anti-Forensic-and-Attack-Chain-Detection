@@ -1,0 +1,13 @@
+src,dst,rule,reason,strength
+E0010,E0011,search_to_visit,visited www.sqlite.org 120s after the search,0.6
+E0014,E0015,search_to_visit,visited www.python.org 30s after the search,0.6
+E0015,E0017,visit_to_download,download from python.org within 60s of the visit,0.8
+E0017,E0019,download_to_execution,"python-3.12.0-amd64.exe downloaded, then executed (Prefetch)",0.9
+E0019,E0020,exec_to_activity,program in focus (Windows Timeline),0.7
+E0034,E0035,exec_to_dns,pdfconverter_setup.exe itself resolved update-cdn-x7q.top,0.9
+E0034,E0037,exec_to_dns,pdfconverter_setup.exe itself resolved update-cdn-x7q.top,0.9
+E0034,E0036,exec_to_activity,program in focus (Windows Timeline),0.7
+E0034,E0038,exec_to_cleanup,CCLEANER64.EXE ran 43 min after execution,0.5
+E0031,E0034,reconstructed_delivery,"browser lookup with no history row, followed by this execution",0.5
+E0032,E0034,reconstructed_delivery,"browser lookup with no history row, followed by this execution",0.5
+E0033,E0034,reconstructed_delivery,"browser lookup with no history row, followed by this execution",0.5

@@ -1,0 +1,381 @@
+[
+  {
+    "event_ids": [
+      "E0014",
+      "E0015",
+      "E0017",
+      "E0019",
+      "E0020"
+    ],
+    "stages": [
+      "Search",
+      "Visit",
+      "Download",
+      "Execution",
+      null
+    ],
+    "stage_path": [
+      "Search",
+      "Visit",
+      "Download",
+      "Execution"
+    ],
+    "start": "2026-10-11T10:17:30+00:00",
+    "end": "2026-10-11T10:21:30+00:00",
+    "finding_ids": [],
+    "edges": [
+      {
+        "src": "E0014",
+        "dst": "E0015",
+        "rule": "search_to_visit",
+        "reason": "visited www.python.org 30s after the search",
+        "strength": 0.6
+      },
+      {
+        "src": "E0015",
+        "dst": "E0017",
+        "rule": "visit_to_download",
+        "reason": "download from python.org within 60s of the visit",
+        "strength": 0.8
+      },
+      {
+        "src": "E0017",
+        "dst": "E0019",
+        "rule": "download_to_execution",
+        "reason": "python-3.12.0-amd64.exe downloaded, then executed (Prefetch)",
+        "strength": 0.9
+      },
+      {
+        "src": "E0019",
+        "dst": "E0020",
+        "rule": "exec_to_activity",
+        "reason": "program in focus (Windows Timeline)",
+        "strength": 0.7
+      }
+    ],
+    "chain_id": "C01",
+    "summary": "Search \u2192 Visit \u2192 Download \u2192 Execution",
+    "attack_steps": [
+      {
+        "stage": "Download",
+        "event_id": "E0017",
+        "ts": "2026-10-11T10:19:00+00:00",
+        "technique_id": "T1105",
+        "technique": "Ingress Tool Transfer",
+        "tactic": "Command and Control",
+        "rationale": "executable python-3.12.0-amd64.exe downloaded",
+        "confidence": "high"
+      },
+      {
+        "stage": "Execution",
+        "event_id": "E0019",
+        "ts": "2026-10-11T10:21:05+00:00",
+        "technique_id": "T1204.002",
+        "technique": "User Execution: Malicious File",
+        "tactic": "Execution",
+        "rationale": "PYTHON-3.12.0-AMD64.EXE executed (Prefetch)",
+        "confidence": "medium"
+      }
+    ],
+    "risk": {
+      "score": 15,
+      "raw_points": 15,
+      "level": "Low",
+      "signals": [
+        {
+          "signal": "trusted_delivery",
+          "points": -20,
+          "reason": "all delivery sites are well-known: www.python.org",
+          "evidence": [
+            "E0015",
+            "E0017"
+          ]
+        },
+        {
+          "signal": "executable_download",
+          "points": 10,
+          "reason": "executable downloaded: python-3.12.0-amd64.exe",
+          "evidence": [
+            "E0017"
+          ]
+        },
+        {
+          "signal": "execution_of_downloaded_file",
+          "points": 10,
+          "reason": "a downloaded file was later executed",
+          "evidence": [
+            "E0017",
+            "E0019"
+          ]
+        },
+        {
+          "signal": "execution_user_space",
+          "points": 10,
+          "reason": "ran from a user-writable folder: \\VOLUME{x}\\USERS\\KUMAR\\DOWNLOADS\\PYTHON-3.12.0-AMD64.EXE",
+          "evidence": [
+            "E0019"
+          ]
+        },
+        {
+          "signal": "multi_source",
+          "points": 5,
+          "reason": "evidence agrees across 3 sources (edge, prefetch, timeline)",
+          "evidence": [
+            "E0014",
+            "E0015",
+            "E0017",
+            "E0019",
+            "E0020"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "event_ids": [
+      "E0031",
+      "E0032",
+      "E0033",
+      "E0034",
+      "E0035",
+      "E0036",
+      "E0037",
+      "E0038"
+    ],
+    "stages": [
+      "Delivery (from DNS)",
+      "Delivery (from DNS)",
+      "Delivery (from DNS)",
+      "Execution",
+      "Network",
+      null,
+      "Network",
+      "Cleanup"
+    ],
+    "stage_path": [
+      "Delivery (from DNS)",
+      "Execution",
+      "Network",
+      "Cleanup"
+    ],
+    "start": "2026-10-12T14:00:40+00:00",
+    "end": "2026-10-12T14:48:10+00:00",
+    "finding_ids": [
+      "F03",
+      "F04",
+      "F05",
+      "F01"
+    ],
+    "edges": [
+      {
+        "src": "E0034",
+        "dst": "E0035",
+        "rule": "exec_to_dns",
+        "reason": "pdfconverter_setup.exe itself resolved update-cdn-x7q.top",
+        "strength": 0.9
+      },
+      {
+        "src": "E0034",
+        "dst": "E0037",
+        "rule": "exec_to_dns",
+        "reason": "pdfconverter_setup.exe itself resolved update-cdn-x7q.top",
+        "strength": 0.9
+      },
+      {
+        "src": "E0034",
+        "dst": "E0036",
+        "rule": "exec_to_activity",
+        "reason": "program in focus (Windows Timeline)",
+        "strength": 0.7
+      },
+      {
+        "src": "E0034",
+        "dst": "E0038",
+        "rule": "exec_to_cleanup",
+        "reason": "CCLEANER64.EXE ran 43 min after execution",
+        "strength": 0.5
+      },
+      {
+        "src": "E0031",
+        "dst": "E0034",
+        "rule": "reconstructed_delivery",
+        "reason": "browser lookup with no history row, followed by this execution",
+        "strength": 0.5
+      },
+      {
+        "src": "E0032",
+        "dst": "E0034",
+        "rule": "reconstructed_delivery",
+        "reason": "browser lookup with no history row, followed by this execution",
+        "strength": 0.5
+      },
+      {
+        "src": "E0033",
+        "dst": "E0034",
+        "rule": "reconstructed_delivery",
+        "reason": "browser lookup with no history row, followed by this execution",
+        "strength": 0.5
+      }
+    ],
+    "chain_id": "C02",
+    "summary": "Delivery (from DNS) \u2192 Execution \u2192 Network \u2192 Cleanup",
+    "attack_steps": [
+      {
+        "stage": "Cleanup (inferred)",
+        "event_id": "E0038",
+        "ts": "2026-10-05T18:00:00+00:00",
+        "technique_id": "T1070",
+        "technique": "Indicator Removal",
+        "tactic": "Defense Evasion",
+        "rationale": "chrome: history rows deleted",
+        "confidence": "medium"
+      },
+      {
+        "stage": "Cleanup (inferred)",
+        "event_id": "E0031",
+        "ts": "2026-10-12T14:00:40+00:00",
+        "technique_id": "T1070",
+        "technique": "Indicator Removal",
+        "tactic": "Defense Evasion",
+        "rationale": "chrome: activity with no history",
+        "confidence": "medium"
+      },
+      {
+        "stage": "Delivery (from DNS)",
+        "event_id": "E0032",
+        "ts": "2026-10-12T14:01:05+00:00",
+        "technique_id": "T1189",
+        "technique": "Drive-by Compromise",
+        "tactic": "Initial Access",
+        "rationale": "browser resolved freepdf-tools.xyz (commonly abused TLD .xyz); visit reconstructed from DNS",
+        "confidence": "low"
+      },
+      {
+        "stage": "Delivery (from DNS)",
+        "event_id": "E0033",
+        "ts": "2026-10-12T14:01:06+00:00",
+        "technique_id": "T1189",
+        "technique": "Drive-by Compromise",
+        "tactic": "Initial Access",
+        "rationale": "browser resolved cdn.freepdf-tools.xyz (commonly abused TLD .xyz); visit reconstructed from DNS",
+        "confidence": "low"
+      },
+      {
+        "stage": "Execution",
+        "event_id": "E0034",
+        "ts": "2026-10-12T14:05:02+00:00",
+        "technique_id": "T1204.002",
+        "technique": "User Execution: Malicious File",
+        "tactic": "Execution",
+        "rationale": "PDFCONVERTER_SETUP.EXE executed (Prefetch)",
+        "confidence": "medium"
+      },
+      {
+        "stage": "Network",
+        "event_id": "E0035",
+        "ts": "2026-10-12T14:05:10+00:00",
+        "technique_id": "T1071.001",
+        "technique": "Application Layer Protocol: Web Protocols",
+        "tactic": "Command and Control",
+        "rationale": "pdfconverter_setup.exe resolved update-cdn-x7q.top - confirm with traffic capture",
+        "confidence": "low"
+      },
+      {
+        "stage": "Network",
+        "event_id": "E0037",
+        "ts": "2026-10-12T14:35:10+00:00",
+        "technique_id": "T1071.001",
+        "technique": "Application Layer Protocol: Web Protocols",
+        "tactic": "Command and Control",
+        "rationale": "pdfconverter_setup.exe resolved update-cdn-x7q.top - confirm with traffic capture",
+        "confidence": "low"
+      },
+      {
+        "stage": "Cleanup",
+        "event_id": "E0038",
+        "ts": "2026-10-12T14:48:10+00:00",
+        "technique_id": "T1070",
+        "technique": "Indicator Removal",
+        "tactic": "Defense Evasion",
+        "rationale": "CCLEANER64.EXE executed after the program",
+        "confidence": "medium"
+      }
+    ],
+    "risk": {
+      "score": 85,
+      "raw_points": 85,
+      "level": "High",
+      "signals": [
+        {
+          "signal": "suspicious_c2_domain",
+          "points": 15,
+          "reason": "program contacted update-cdn-x7q.top: commonly abused TLD .top",
+          "evidence": [
+            "E0035",
+            "E0037"
+          ]
+        },
+        {
+          "signal": "suspicious_delivery_domain",
+          "points": 15,
+          "reason": "delivery site(s): cdn.freepdf-tools.xyz, freepdf-tools.xyz (commonly abused TLD .xyz)",
+          "evidence": [
+            "E0032",
+            "E0033"
+          ]
+        },
+        {
+          "signal": "cleanup_after_exec",
+          "points": 15,
+          "reason": "CCLEANER64.EXE ran after the program",
+          "evidence": [
+            "E0038"
+          ]
+        },
+        {
+          "signal": "history_deleted",
+          "points": 15,
+          "reason": "chrome: history rows deleted; chrome: activity with no history; PDFCONVERTER_SETUP.EXE has no download record",
+          "evidence": [
+            "E0031",
+            "E0032",
+            "E0033",
+            "E0034"
+          ]
+        },
+        {
+          "signal": "execution_user_space",
+          "points": 10,
+          "reason": "ran from a user-writable folder: \\VOLUME{x}\\USERS\\KUMAR\\DOWNLOADS\\PDFCONVERTER_SETUP.EXE",
+          "evidence": [
+            "E0034"
+          ]
+        },
+        {
+          "signal": "network_after_exec",
+          "points": 10,
+          "reason": "the program itself made 2 DNS lookup(s)",
+          "evidence": [
+            "E0035",
+            "E0037"
+          ]
+        },
+        {
+          "signal": "multi_source",
+          "points": 5,
+          "reason": "evidence agrees across 3 sources (dns, prefetch, timeline)",
+          "evidence": [
+            "E0031",
+            "E0032",
+            "E0033",
+            "E0034",
+            "E0035",
+            "E0036",
+            "E0037",
+            "E0038"
+          ]
+        }
+      ]
+    }
+  }
+]

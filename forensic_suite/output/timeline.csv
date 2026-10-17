@@ -1,0 +1,44 @@
+event_id,ts,source,browser,artifact_type,category,url,domain,registrable,referrer,title,detail,file_name,file_path,process,is_executable,user_space,source_file,summary
+E0001,2026-10-05 18:00:00+00:00,prefetch,,execution,cleanup,,,,,,run count 3,CCLEANER64.EXE,\VOLUME{x}\PROGRAM FILES\CCLEANER\CCLEANER64.EXE,ccleaner64.exe,True,False,prefetch.csv,cleanup: CCLEANER64.EXE
+E0002,2026-10-09 09:00:00+00:00,chrome,chrome,visit,visit,https://github.com/,github.com,github.com,,GitHub,,,,,False,False,History,visit: https://github.com/
+E0003,2026-10-09 09:00:01+00:00,dns,chrome,dns,dns,,github.com,github.com,,,github.com,,,chrome.exe,False,False,dns.csv,dns: github.com
+E0004,2026-10-09 09:05:00+00:00,chrome,chrome,visit,visit,https://stackoverflow.com/questions/1,stackoverflow.com,stackoverflow.com,,Question,,,,,False,False,History,visit: https://stackoverflow.com/questions/1
+E0005,2026-10-10 11:00:00+00:00,chrome,chrome,visit,visit,https://en.wikipedia.org/wiki/SQLite,en.wikipedia.org,wikipedia.org,,SQLite - Wikipedia,,,,,False,False,History,visit: https://en.wikipedia.org/wiki/SQLite
+E0006,2026-10-10 11:00:01+00:00,dns,chrome,dns,dns,,en.wikipedia.org,wikipedia.org,,,en.wikipedia.org,,,chrome.exe,False,False,dns.csv,dns: en.wikipedia.org
+E0007,2026-10-10 11:08:00+00:00,chrome,chrome,visit,visit,https://www.w3schools.com/sql/,www.w3schools.com,w3schools.com,,SQL Tutorial,,,,,False,False,History,visit: https://www.w3schools.com/sql/
+E0008,2026-10-10 16:00:00+00:00,firefox,firefox,visit,visit,https://www.mozilla.org/en-US/,www.mozilla.org,mozilla.org,,Mozilla,,,,,False,False,places.sqlite,visit: https://www.mozilla.org/en-US/
+E0009,2026-10-10 16:05:00+00:00,firefox,firefox,visit,visit,https://duckduckgo.com/?q=sqlite+wal+forensics,duckduckgo.com,duckduckgo.com,,DuckDuckGo,,,,,False,False,places.sqlite,visit: https://duckduckgo.com/?q=sqlite+wal+forensics
+E0010,2026-10-10 16:05:00+00:00,firefox,firefox,search,search,https://duckduckgo.com/?q=sqlite+wal+forensics,duckduckgo.com,duckduckgo.com,,,sqlite wal forensics,,,,False,False,places.sqlite,search: https://duckduckgo.com/?q=sqlite+wal+forensics
+E0011,2026-10-10 16:07:00+00:00,firefox,firefox,visit,visit,https://www.sqlite.org/wal.html,www.sqlite.org,sqlite.org,,WAL,,,,,False,False,places.sqlite,visit: https://www.sqlite.org/wal.html
+E0012,2026-10-11 10:10:00+00:00,edge,edge,visit,visit,https://www.microsoft.com/en-us/,www.microsoft.com,microsoft.com,,Microsoft,,,,,False,False,History,visit: https://www.microsoft.com/en-us/
+E0013,2026-10-11 10:17:30+00:00,edge,edge,visit,visit,https://www.bing.com/search?q=python+3.12+download,www.bing.com,bing.com,,Bing Search,,,,,False,False,History,visit: https://www.bing.com/search?q=python+3.12+download
+E0014,2026-10-11 10:17:30+00:00,edge,edge,search,search,https://www.bing.com/search?q=python+3.12+download,www.bing.com,bing.com,,,python 3.12 download,,,,False,False,History,search: https://www.bing.com/search?q=python+3.12+download
+E0015,2026-10-11 10:18:00+00:00,edge,edge,visit,visit,https://www.python.org/downloads/,www.python.org,python.org,,Download Python,,,,,False,False,History,visit: https://www.python.org/downloads/
+E0016,2026-10-11 10:18:01+00:00,dns,edge,dns,dns,,www.python.org,python.org,,,www.python.org,,,msedge.exe,False,False,dns.csv,dns: www.python.org
+E0017,2026-10-11 10:19:00+00:00,edge,edge,download,download,https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe,www.python.org,python.org,https://www.python.org/downloads/,,26000000 bytes,python-3.12.0-amd64.exe,C:\Users\Kumar\Downloads\python-3.12.0-amd64.exe,,True,True,History,download: https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
+E0018,2026-10-11 10:19:01+00:00,dns,edge,dns,dns,,www.python.org,python.org,,,www.python.org,,,msedge.exe,False,False,dns.csv,dns: www.python.org
+E0019,2026-10-11 10:21:05+00:00,prefetch,,execution,execution,,,,,,run count 1,PYTHON-3.12.0-AMD64.EXE,\VOLUME{x}\USERS\KUMAR\DOWNLOADS\PYTHON-3.12.0-AMD64.EXE,python-3.12.0-amd64.exe,True,True,prefetch.csv,execution: PYTHON-3.12.0-AMD64.EXE
+E0020,2026-10-11 10:21:30+00:00,timeline,,activity,activity,,,,,,Python 3.12.0 Setup,python-3.12.0-amd64.exe,C:\Users\Kumar\Downloads\python-3.12.0-amd64.exe,python-3.12.0-amd64.exe,True,True,ActivitiesCache.db,activity: python-3.12.0-amd64.exe
+E0021,2026-10-11 12:00:00+00:00,edge,edge,visit,visit,https://learn.microsoft.com/en-us/,learn.microsoft.com,microsoft.com,,Microsoft Learn,,,,,False,False,History,visit: https://learn.microsoft.com/en-us/
+E0022,2026-10-11 16:30:00+00:00,firefox,firefox,download,download,https://example.edu/notes.pdf,example.edu,example.edu,,,,notes.pdf,C:\Users\Kumar\Downloads\notes.pdf,,False,True,places.sqlite,download: https://example.edu/notes.pdf
+E0023,2026-10-11 18:20:00+00:00,chrome,chrome,visit,visit,https://github.com/pandas-dev/pandas,github.com,github.com,,pandas,,,,,False,False,History,visit: https://github.com/pandas-dev/pandas
+E0024,2026-10-12 08:50:00+00:00,prefetch,,execution,execution,,,,,,run count 9,NOTEPAD.EXE,\VOLUME{x}\WINDOWS\SYSTEM32\NOTEPAD.EXE,notepad.exe,True,False,prefetch.csv,execution: NOTEPAD.EXE
+E0025,2026-10-12 09:03:00+00:00,timeline,,activity,activity,,,,,,Chrome,chrome.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe,True,False,ActivitiesCache.db,activity: chrome.exe
+E0026,2026-10-12 09:03:00+00:00,prefetch,,execution,execution,,,,,,run count 40,CHROME.EXE,\VOLUME{x}\PROGRAM FILES\GOOGLE\CHROME\APPLICATION\CHROME.EXE,chrome.exe,True,False,prefetch.csv,execution: CHROME.EXE
+E0027,2026-10-12 09:04:00+00:00,chrome,chrome,visit,visit,https://github.com/streamlit/streamlit,github.com,github.com,,streamlit,,,,,False,False,History,visit: https://github.com/streamlit/streamlit
+E0028,2026-10-12 09:04:01+00:00,dns,chrome,dns,dns,,github.com,github.com,,,github.com,,,chrome.exe,False,False,dns.csv,dns: github.com
+E0029,2026-10-12 09:04:02+00:00,dns,chrome,dns,dns,,avatars.githubusercontent.com,githubusercontent.com,,,avatars.githubusercontent.com,,,chrome.exe,False,False,dns.csv,dns: avatars.githubusercontent.com
+E0030,2026-10-12 09:12:00+00:00,chrome,chrome,visit,visit,https://stackoverflow.com/questions/2,stackoverflow.com,stackoverflow.com,,Question 2,,,,,False,False,History,visit: https://stackoverflow.com/questions/2
+E0031,2026-10-12 14:00:40+00:00,dns,chrome,dns,dns,,www.google.com,google.com,,,www.google.com,,,chrome.exe,False,False,dns.csv,dns: www.google.com
+E0032,2026-10-12 14:01:05+00:00,dns,chrome,dns,dns,,freepdf-tools.xyz,freepdf-tools.xyz,,,freepdf-tools.xyz,,,chrome.exe,False,False,dns.csv,dns: freepdf-tools.xyz
+E0033,2026-10-12 14:01:06+00:00,dns,chrome,dns,dns,,cdn.freepdf-tools.xyz,freepdf-tools.xyz,,,cdn.freepdf-tools.xyz,,,chrome.exe,False,False,dns.csv,dns: cdn.freepdf-tools.xyz
+E0034,2026-10-12 14:05:02+00:00,prefetch,,execution,execution,,,,,,run count 1,PDFCONVERTER_SETUP.EXE,\VOLUME{x}\USERS\KUMAR\DOWNLOADS\PDFCONVERTER_SETUP.EXE,pdfconverter_setup.exe,True,True,prefetch.csv,execution: PDFCONVERTER_SETUP.EXE
+E0035,2026-10-12 14:05:10+00:00,dns,,dns,dns,,update-cdn-x7q.top,update-cdn-x7q.top,,,update-cdn-x7q.top,,,pdfconverter_setup.exe,False,False,dns.csv,dns: update-cdn-x7q.top
+E0036,2026-10-12 14:05:30+00:00,timeline,,activity,activity,,,,,,PDF Converter Setup,pdfconverter_setup.exe,C:\Users\Kumar\Downloads\PDFConverter_Setup.exe,pdfconverter_setup.exe,True,True,ActivitiesCache.db,activity: pdfconverter_setup.exe
+E0037,2026-10-12 14:35:10+00:00,dns,,dns,dns,,update-cdn-x7q.top,update-cdn-x7q.top,,,update-cdn-x7q.top,,,pdfconverter_setup.exe,False,False,dns.csv,dns: update-cdn-x7q.top
+E0038,2026-10-12 14:48:10+00:00,prefetch,,execution,cleanup,,,,,,run count 3,CCLEANER64.EXE,\VOLUME{x}\PROGRAM FILES\CCLEANER\CCLEANER64.EXE,ccleaner64.exe,True,False,prefetch.csv,cleanup: CCLEANER64.EXE
+E0039,2026-10-12 15:29:00+00:00,prefetch,,execution,execution,,,,,,run count 40,CHROME.EXE,\VOLUME{x}\PROGRAM FILES\GOOGLE\CHROME\APPLICATION\CHROME.EXE,chrome.exe,True,False,prefetch.csv,execution: CHROME.EXE
+E0040,2026-10-12 15:29:30+00:00,timeline,,activity,activity,,,,,,Chrome,chrome.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe,True,False,ActivitiesCache.db,activity: chrome.exe
+E0041,2026-10-12 15:30:00+00:00,chrome,chrome,visit,visit,https://stackoverflow.com/questions/4,stackoverflow.com,stackoverflow.com,,Question 4,,,,,False,False,History,visit: https://stackoverflow.com/questions/4
+E0042,2026-10-12 15:30:01+00:00,dns,chrome,dns,dns,,stackoverflow.com,stackoverflow.com,,,stackoverflow.com,,,chrome.exe,False,False,dns.csv,dns: stackoverflow.com
+E0043,2026-10-12 15:42:00+00:00,chrome,chrome,visit,visit,https://github.com/pallets/flask,github.com,github.com,,flask,,,,,False,False,History,visit: https://github.com/pallets/flask

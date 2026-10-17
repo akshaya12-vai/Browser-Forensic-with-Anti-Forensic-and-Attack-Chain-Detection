@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "chromium",
+    "source_path": "sample_evidence/chrome/History",
+    "working_copy": "output/working_copies/8d7fcacc_History",
+    "size_bytes": 28672,
+    "sha256": "356722a5058462d62ea2f40e9e002993883bda92316aaf47a54678f67eb11155",
+    "copy_sha256": "356722a5058462d62ea2f40e9e002993883bda92316aaf47a54678f67eb11155",
+    "verified": true,
+    "acquired_utc": "2026-10-17T14:46:19+00:00",
+    "events_extracted": 9
+  },
+  {
+    "kind": "chromium",
+    "source_path": "sample_evidence/edge/History",
+    "working_copy": "output/working_copies/1c8f4bd9_History",
+    "size_bytes": 28672,
+    "sha256": "b06c78296f3217bd527c60be1a420cd5ae171c34f053d9d85a21adf089e61137",
+    "copy_sha256": "b06c78296f3217bd527c60be1a420cd5ae171c34f053d9d85a21adf089e61137",
+    "verified": true,
+    "acquired_utc": "2026-10-17T14:46:19+00:00",
+    "events_extracted": 8
+  },
+  {
+    "kind": "firefox",
+    "source_path": "sample_evidence/firefox/places.sqlite",
+    "working_copy": "output/working_copies/80ea705b_places.sqlite",
+    "size_bytes": 24576,
+    "sha256": "a4ac0ed4aebd09599b5387fef589360a136f07c7dac2bd37a0d5ee614fb4f8e3",
+    "copy_sha256": "a4ac0ed4aebd09599b5387fef589360a136f07c7dac2bd37a0d5ee614fb4f8e3",
+    "verified": true,
+    "acquired_utc": "2026-10-17T14:46:19+00:00",
+    "events_extracted": 5
+  },
+  {
+    "kind": "timeline",
+    "source_path": "sample_evidence/windows/ActivitiesCache.db",
+    "working_copy": "output/working_copies/7124f4a6_ActivitiesCache.db",
+    "size_bytes": 8192,
+    "sha256": "cb693d1dcc1e9a3588d51e312aab56891827d3d2c47ff13e2acd73fde1ad2322",
+    "copy_sha256": "cb693d1dcc1e9a3588d51e312aab56891827d3d2c47ff13e2acd73fde1ad2322",
+    "verified": true,
+    "acquired_utc": "2026-10-17T14:46:19+00:00",
+    "events_extracted": 4
+  },
+  {
+    "kind": "dns",
+    "source_path": "sample_evidence/windows/dns.csv",
+    "working_copy": "output/working_copies/a2e50f96_dns.csv",
+    "size_bytes": 661,
+    "sha256": "d4738c6946c3ae8882313c648552f70a61707ca4cfcc254ac329f2ffbf052b78",
+    "copy_sha256": "d4738c6946c3ae8882313c648552f70a61707ca4cfcc254ac329f2ffbf052b78",
+    "verified": true,
+    "acquired_utc": "2026-10-17T14:46:19+00:00",
+    "events_extracted": 12
+  },
+  {
+    "kind": "prefetch",
+    "source_path": "sample_evidence/windows/prefetch.csv",
+    "working_copy": "output/working_copies/7d05d451_prefetch.csv",
+    "size_bytes": 598,
+    "sha256": "1b9534123b3213407e60a608dab2f3b5b98aa28db0d8d47b234be1f09699bc4c",
+    "copy_sha256": "1b9534123b3213407e60a608dab2f3b5b98aa28db0d8d47b234be1f09699bc4c",
+    "verified": true,
+    "acquired_utc": "2026-10-17T14:46:19+00:00",
+    "events_extracted": 7
+  }
+]

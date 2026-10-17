@@ -1,0 +1,72 @@
+[
+  {
+    "kind": "deleted_records",
+    "ts": "2026-10-05T18:00:00+00:00",
+    "ts_end": "2026-10-05T18:00:00+00:00",
+    "severity": 0.9,
+    "title": "chrome: history rows deleted",
+    "description": "visits ids run 1..14 but only 9 rows remain: 5 missing inside the range (selective deletion), 0 missing at the end.",
+    "evidence": [],
+    "caveat": "Chrome also expires visits older than ~90 days from the START of the table; only interior/tail gaps point to selective deletion.",
+    "technique": "T1070",
+    "finding_id": "F01"
+  },
+  {
+    "kind": "cleanup_tool",
+    "ts": "2026-10-05T18:00:00+00:00",
+    "ts_end": "2026-10-05T18:00:00+00:00",
+    "severity": 0.7,
+    "title": "CCLEANER64.EXE executed",
+    "description": "Trace-cleaning tool CCLEANER64.EXE ran at 2026-10-05 18:00:00 UTC (run count 3).",
+    "evidence": [
+      "E0001"
+    ],
+    "caveat": "Cleanup tools are also used for legitimate disk maintenance.",
+    "technique": "T1070",
+    "finding_id": "F02"
+  },
+  {
+    "kind": "history_gap",
+    "ts": "2026-10-12T14:00:40+00:00",
+    "ts_end": "2026-10-12T14:01:06+00:00",
+    "severity": 0.8,
+    "title": "chrome: activity with no history",
+    "description": "chrome resolved cdn.freepdf-tools.xyz, freepdf-tools.xyz, www.google.com between 14:00:40 and 14:01:06 UTC, but no history row exists within 10 minutes.",
+    "evidence": [
+      "E0031",
+      "E0032",
+      "E0033"
+    ],
+    "caveat": "Private/incognito browsing leaves DNS traces but no history.",
+    "technique": "T1070",
+    "finding_id": "F03"
+  },
+  {
+    "kind": "download_record_missing",
+    "ts": "2026-10-12T14:05:02+00:00",
+    "ts_end": "2026-10-12T14:05:02+00:00",
+    "severity": 0.7,
+    "title": "PDFCONVERTER_SETUP.EXE has no download record",
+    "description": "PDFCONVERTER_SETUP.EXE ran from \\VOLUME{x}\\USERS\\KUMAR\\DOWNLOADS\\PDFCONVERTER_SETUP.EXE but no browser recorded downloading it.",
+    "evidence": [
+      "E0034"
+    ],
+    "caveat": "File may have arrived via USB, e-mail or another browser profile.",
+    "technique": "T1070",
+    "finding_id": "F04"
+  },
+  {
+    "kind": "cleanup_tool",
+    "ts": "2026-10-12T14:48:10+00:00",
+    "ts_end": "2026-10-12T14:48:10+00:00",
+    "severity": 0.7,
+    "title": "CCLEANER64.EXE executed",
+    "description": "Trace-cleaning tool CCLEANER64.EXE ran at 2026-10-12 14:48:10 UTC (run count 3).",
+    "evidence": [
+      "E0038"
+    ],
+    "caveat": "Cleanup tools are also used for legitimate disk maintenance.",
+    "technique": "T1070",
+    "finding_id": "F05"
+  }
+]

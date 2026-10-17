@@ -1,0 +1,13 @@
+timestamp,domain,qtype,process
+2026-10-09 09:00:01,github.com,A,chrome.exe
+2026-10-10 11:00:01,en.wikipedia.org,A,chrome.exe
+2026-10-12 09:04:01,github.com,A,chrome.exe
+2026-10-12 09:04:02,avatars.githubusercontent.com,A,chrome.exe
+2026-10-12 14:00:40,www.google.com,A,chrome.exe
+2026-10-12 14:01:05,freepdf-tools.xyz,A,chrome.exe
+2026-10-12 14:01:06,cdn.freepdf-tools.xyz,A,chrome.exe
+2026-10-12 14:05:10,update-cdn-x7q.top,A,pdfconverter_setup.exe
+2026-10-12 14:35:10,update-cdn-x7q.top,A,pdfconverter_setup.exe
+2026-10-12 15:30:01,stackoverflow.com,A,chrome.exe
+2026-10-11 10:18:01,www.python.org,A,msedge.exe
+2026-10-11 10:19:01,www.python.org,A,msedge.exe
